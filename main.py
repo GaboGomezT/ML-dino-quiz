@@ -28,8 +28,9 @@ def form_post(
     num: float = Form(...),
     fname: str = Form(...),
     diet: str = Form(...),
+    country: str = Form(...)
 ):
-    result = [num, fname, diet]
+    result = [num, fname, diet, country]
     return templates.TemplateResponse(
         "index.html",
         context={
