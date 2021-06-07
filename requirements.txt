@@ -1,2 +1,10 @@
 fastapi
 uvicorn
+aiofiles
+
+starlette
+
+jinja2 
+python-multipart
+
+black

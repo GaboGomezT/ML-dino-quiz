@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Form</title>
+</head>
+<body>
+    <h2>Machine Learning Dino Quiz</h2>
+    <p>Learn what dinosaur you would be based on some simple questions</p>
+    <img src="static/images/tacosaurus.jpg" alt="tacosaurus.jpg" width="300" height="300" style="border-radius: 20%;">
+<form method="post">
+    <input type="text" id="fname" name="fname" placeholder="What's your name?"><br>
+    <input type="number" name="num" value="1234"/><br>
+    <select name="diet" id="diet">
+        <option value="omnivore">You like a well balanced meal 🍲</option>
+        <option value="carnivore">You prefer a big juicy steak 🥩</option>
+        <option value="herbivore">You like a good salad 🥗</option>
+    </select><br>
+    <input type="submit">
+</form>
+
+<p>Result: {{ result }}</p>
+
+</body>
+</html>
