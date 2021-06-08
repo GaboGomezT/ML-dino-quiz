@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Form</title>
+    <title>Dino Quiz</title>
 </head>
 <body>
     <h2>Machine Learning Dino Quiz</h2>
     <p>Learn what dinosaur you would be based on some simple questions</p>
     <img src="static/images/tacosaurus.jpg" alt="tacosaurus.jpg" width="300" height="300" style="border-radius: 20%;">
 <form method="post">
-    <input type="text" id="fname" name="fname" placeholder="What's your name?" required><br>
-    <input type="number" name="num" step="0.01" value="1.70"/><br>
+    <input type="text" id="name" name="name" placeholder="What's your name?" required><br>
+    <input type="number" name="age" placeholder="How old are you?" min="0" max="100" required/><br>
+    <input type="number" name="height" step="0.01" min="0" max="3" placeholder="How tall are you? (meters)" required/><br>
     <select name="diet" id="diet">
         <option value="omnivore">You like a well balanced meal 🍲</option>
         <option value="carnivore">You prefer a big juicy steak 🥩</option>
@@ -24,7 +25,7 @@
     <input type="submit">
 </form>
 
-<p>Result: {{ result }}</p>
+<p>echo: {{ result }}</p>
 
 </body>
 </html>

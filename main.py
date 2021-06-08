@@ -11,7 +11,7 @@ lived_in_options = ["USA", "United Kingdom", "China", "Mexico"]
 
 @app.get("/")
 def form_post(request: Request):
-    result = "Type a number"
+    result = "Fill out form"
     return templates.TemplateResponse(
         "index.html",
         context={
@@ -25,12 +25,19 @@ def form_post(request: Request):
 @app.post("/")
 def form_post(
     request: Request,
-    num: float = Form(...),
-    fname: str = Form(...),
+    age: int = Form(...),
+    height: float = Form(...),
+    name: str = Form(...),
     diet: str = Form(...),
     country: str = Form(...)
 ):
-    result = [num, fname, diet, country]
+    result = {
+        "age": age,
+        "height": height,
+        "name": name,
+        "diet": diet,
+        "country": country,
+    }
     return templates.TemplateResponse(
         "index.html",
         context={
