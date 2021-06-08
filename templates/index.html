@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/ico" href="/static/images/favicon.ico"/>
     <meta charset="UTF-8">
     <title>Dino Quiz</title>
 </head>
@@ -8,24 +9,24 @@
     <h2>Machine Learning Dino Quiz</h2>
     <p>Learn what dinosaur you would be based on some simple questions</p>
     <img src="static/images/tacosaurus.jpg" alt="tacosaurus.jpg" width="300" height="300" style="border-radius: 20%;">
-<form method="post">
-    <input type="text" id="name" name="name" placeholder="What's your name?" required><br>
-    <input type="number" name="age" placeholder="How old are you?" min="0" max="100" required/><br>
-    <input type="number" name="height" step="0.01" min="0" max="3" placeholder="How tall are you? (meters)" required/><br>
-    <select name="diet" id="diet">
-        <option value="omnivore">You like a well balanced meal 🍲</option>
-        <option value="carnivore">You prefer a big juicy steak 🥩</option>
-        <option value="herbivore">You like a good salad 🥗</option>
-    </select><br>
-    <select name="country" id="country">
-        {% for c in countries %}
-        <option value={{c}}>{{c}}</option>
-        {% endfor %}
-    </select><br>
-    <input type="submit">
-</form>
+    <form method="post">
+        <input type="text" id="name" name="name" placeholder="What's your name?" required><br>
+        <input type="number" name="age" placeholder="How old are you?" min="0" max="100" required/><br>
+        <input type="number" name="height" step="0.01" min="0" max="3" placeholder="How tall are you? (meters)" required/><br>
+        <select name="diet" id="diet">
+            <option value="omnivore">You like a well balanced meal 🍲</option>
+            <option value="carnivore">You prefer a big juicy steak 🥩</option>
+            <option value="herbivore">You like a good salad 🥗</option>
+        </select><br>
+        <select name="country" id="country">
+            {% for c in countries %}
+            <option value={{c}}>{{c}}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit">
+    </form>
 
-<p>echo: {{ result }}</p>
+    <p>echo: {{ result }}</p>
 
 </body>
 </html>
