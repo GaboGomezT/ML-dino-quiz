@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from starlette.staticfiles import StaticFiles
+import json
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -11,12 +12,10 @@ lived_in_options = ["USA", "United Kingdom", "China", "Mexico"]
 
 @app.get("/")
 def form_post(request: Request):
-    result = "Fill out form"
     return templates.TemplateResponse(
         "index.html",
         context={
             "request": request,
-            "result": result,
             "countries": lived_in_options,
         },
     )
@@ -29,20 +28,21 @@ def form_post(
     height: float = Form(...),
     name: str = Form(...),
     diet: str = Form(...),
-    country: str = Form(...)
+    country: str = Form(...),
 ):
-    result = {
-        "age": age,
-        "height": height,
-        "name": name,
-        "diet": diet,
-        "country": country,
-    }
+    dino = classify(age, height, diet, country)
+    with open("dino.json") as file:
+        dino_urls = json.load(file)
     return templates.TemplateResponse(
         "index.html",
         context={
             "request": request,
-            "result": result,
+            "dino": dino,
+            "img_url": dino_urls[dino],
             "countries": lived_in_options,
         },
     )
+
+
+def classify(age: int, height: float, diet: str, country: str) -> str:
+    return "barapasaurus"
