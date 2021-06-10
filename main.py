@@ -2,6 +2,7 @@ from fastapi import FastAPI, Request, Form
 from fastapi.templating import Jinja2Templates
 from starlette.staticfiles import StaticFiles
 import json
+import random
 
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -33,6 +34,7 @@ def form_post(
     dino = classify(age, height, diet, country)
     with open("dino.json") as file:
         dino_urls = json.load(file)
+    dino = random.choice(list(dino_urls.keys()))
     return templates.TemplateResponse(
         "index.html",
         context={
