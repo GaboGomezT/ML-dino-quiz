@@ -7,7 +7,5 @@ starlette
 jinja2 
 python-multipart
 
-black
-
-sklearn
+scikit-learn==0.22.2.post1
 pandas
