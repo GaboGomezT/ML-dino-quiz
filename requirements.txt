@@ -8,6 +8,6 @@ jinja2
 python-multipart
 
 cython
-numpy
+numpy==1.11.0
 scikit-learn==0.22.2.post1
 pandas
