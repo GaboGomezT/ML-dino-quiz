@@ -7,6 +7,8 @@ starlette
 jinja2 
 python-multipart
 
+gunicorn
+
 numpy
 scikit-learn
 pandas
